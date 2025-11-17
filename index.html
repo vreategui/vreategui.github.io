@@ -130,13 +130,24 @@
     </section>
 
     <section id="report">
-        <h2>20-Page Report</h2>
-        <div class="project">
-            <h3>Accident Severity Report</h3>
-            <p>This report analyzes the impact of road surface type, road condition, intersection type, and speed zones on accident severity.</p>
-            <p><a href="Accident_Severity_Report.pdf" target="_blank">Download/View PDF</a></p>
-        </div>
-    </section>
+    <h2>Accident Severity Report</h2>
+    <div class="project">
+        <h3>Summary</h3>
+        <p>
+            This report investigates the impact of road types, road conditions, intersection types, and speed zones on accident severity. Relevant data was used from the following datasets provided by VicRoads: Accidents, Vehicle and Road Surface Condition. 
+            The data was prepared by managing anomalies in speed zone data, handling missing values, removing duplicates, and one-hot encoding categorical variables. 
+            The relationship between the pre-crash variables and crash severity was investigated using correlation analysis and two different supervised learning models. 
+            The correlation analysis primarily consisted of using mutual information to explore non-linear associations between road features and severity levels. 
+            The analysis revealed that most individual features had weak associations, however there were some notable patterns identified. 
+            Visualizations such as stacked bar charts and distribution graphs displayed the trends. 
+            Supervised learning models were developed to predict whether a vehicle’s damage would be severe given road surface, road surface condition, intersection type, and speed. 
+            The models also revealed the extent to which each variable contributed to predicting accident severity. 
+            Overall, the report demonstrates that speed zones have the most important impact on severity, while road surface condition and certain intersection types also have notable impact.
+        </p>
+        <p><a href="Accident_Severity_Report.pdf" target="_blank">Download/View Full PDF</a></p>
+    </div>
+</section>
+
 
 
     <footer>
