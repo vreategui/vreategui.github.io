@@ -10,7 +10,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     background: #121212;
-    color: #f0f0f0;
+    color: #eee;
 }
 header {
     text-align: center;
@@ -31,61 +31,29 @@ nav a {
 }
 nav a:hover { text-decoration: underline; }
 
-/* Section Cards */
+/* Project Cards */
 section { padding: 2rem 1rem; max-width: 1000px; margin: auto; }
 .project-card {
     background: #1f1f1f;
+    color: #eee;
     margin: 1rem 0;
     padding: 1rem;
     border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.5);
-    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
     transition: transform 0.2s, box-shadow 0.2s;
 }
 .project-card:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 25px rgba(30,144,255,0.7);
+    transform: scale(1.02);
+    box-shadow: 0 0 25px rgba(30,144,255,0.7); /* Blue glow effect */
 }
 .project-card h3 { margin-top: 0; }
-
-/* Modal Styles */
-.modal {
-    display: none;
-    position: fixed;
-    top:0; left:0;
-    width:100%; height:100%;
-    background: rgba(0,0,0,0.9);
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-    z-index: 1000;
-}
-.modal-content {
-    background: #222;
-    padding: 2rem;
-    border-radius: 10px;
-    max-width: 800px;
-    width: 100%;
-    color: #f0f0f0;
-    overflow-y: auto;
-    max-height: 90%;
-}
-.close-btn {
-    float: right;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: #ff5e5e;
-}
-.modal-content img {
+.project-card img {
     max-width: 100%;
     border-radius: 10px;
     margin-top: 1rem;
 }
-
-/* Lists inside modal */
-.modal-content ul { padding-left: 1.2rem; }
-.modal-content a { color: #1e90ff; }
-.modal-content a:hover { text-decoration: underline; }
+.project-card a { color: #1e90ff; text-decoration: none; }
+.project-card a:hover { text-decoration: underline; }
 
 /* Footer */
 footer {
@@ -113,138 +81,74 @@ footer {
 
 <!-- About Me -->
 <section id="about">
-    <div class="project-card" onclick="openModal('modalAbout')">
+    <div class="project-card">
         <h3>About Me</h3>
-        <p>Click to learn more about my background and skills.</p>
+        <p>Hello! I'm a 3rd year Bachelor of Design student at Melbourne University, majoring in Computing and Software Systems.  
+        I have experience with Java, C, SQL, and Python, and enjoy analyzing problems, designing solutions, and learning new technologies.  
+        Through my projects, I have developed strong skills in programming logic, software development, and problem-solving, and I am always eager to take on new challenges.</p>
     </div>
 </section>
-
-<div id="modalAbout" class="modal">
-    <div class="modal-content">
-        <span class="close-btn" onclick="closeModal('modalAbout')">&times;</span>
-        <h2>About Me</h2>
-        <p>Hello! I'm a 3rd year Bachelor of Design student at Melbourne University, majoring in Computing and Software Systems. I have experience with Java, C, SQL, and Python, and enjoy analyzing problems, designing solutions, and learning new technologies. Through my projects, I have developed strong skills in programming logic, software development, and problem-solving, and I am always eager to take on new challenges.</p>
-    </div>
-</div>
 
 <!-- Games -->
 <section id="games">
-    <div class="project-card" onclick="openModal('modalGame1')">
+    <div class="project-card">
         <h3>Shadow Dungeon - Part 1</h3>
-        <p>Click to view the game project.</p>
-    </div>
-    <div class="project-card" onclick="openModal('modalGame2')">
-        <h3>Shadow Dungeon - Extension</h3>
-        <p>Click to view the extended version with upgrades and enemies.</p>
-    </div>
-</section>
-
-<div id="modalGame1" class="modal">
-    <div class="modal-content">
-        <span class="close-btn" onclick="closeModal('modalGame1')">&times;</span>
-        <h2>Shadow Dungeon - Part 1</h2>
         <img src="res/Basic.png" alt="Battle Rooms">
         <p>A 2D game where the player must touch an enemy to access the next room.</p>
         <p><a href="https://github.com/vreategui/Shadow-Dungeon---Part-1" target="_blank">View on GitHub</a></p>
     </div>
-</div>
-
-<div id="modalGame2" class="modal">
-    <div class="modal-content">
-        <span class="close-btn" onclick="closeModal('modalGame2')">&times;</span>
-        <h2>Shadow Dungeon - Extension</h2>
+    <div class="project-card">
+        <h3>Shadow Dungeon - Extension</h3>
         <img src="res/ShadowDungeon.png" alt="Shadow Dungeon Extension">
         <p>Fast-paced 2D dungeon crawler built with Bagel library in Java. Explore rooms, fight enemies, collect coins, unlock doors, and upgrade weapons or health through the in-game store.</p>
-        <p><iframe src="res/UML.drawio.pdf" width="100%" height="400px"></iframe></p>
+        <iframe src="res/UML.drawio.pdf" width="100%" height="300px"></iframe>
         <p><a href="https://github.com/vreategui/Shadow-Dungeon---part-2" target="_blank">View on GitHub</a></p>
     </div>
-</div>
+</section>
 
 <!-- SQL Projects -->
 <section id="sql">
-    <div class="project-card" onclick="openModal('modalSQL1')">
+    <div class="project-card">
         <h3>Social Media Platform - Database Design</h3>
-        <p>Click to view the database model.</p>
-    </div>
-    <div class="project-card" onclick="openModal('modalSQL2')">
-        <h3>Movie Database SQL Queries</h3>
-        <p>Click to view the SQL queries project.</p>
-    </div>
-</section>
-
-<div id="modalSQL1" class="modal">
-    <div class="modal-content">
-        <span class="close-btn" onclick="closeModal('modalSQL1')">&times;</span>
-        <h2>Social Media Platform - Database Design</h2>
         <p>Created a physical MySQL database model (Crow’s Foot notation) for a social media platform focused on authentic content and moderation.</p>
-        <iframe src="social_media_physical_ER.pdf" width="100%" height="400px"></iframe>
+        <iframe src="social_media_physical_ER.pdf" width="100%" height="300px"></iframe>
         <p><a href="social_media_physical_ER.pdf" target="_blank">Download/View Full PDF</a></p>
     </div>
-</div>
-
-<div id="modalSQL2" class="modal">
-    <div class="modal-content">
-        <span class="close-btn" onclick="closeModal('modalSQL2')">&times;</span>
-        <h2>Movie Database SQL Queries</h2>
+    <div class="project-card">
+        <h3>Movie Database SQL Queries</h3>
         <p>Developed SQL queries to analyze movies, ratings, genres, and cross-platform data across IMDB, Netflix, Metacritic, Rotten Tomatoes, and Movielens.</p>
         <p><a href="https://github.com/vreategui/Database-Systems/blob/main/VanesaReategui_1606065.sql" target="_blank">View on GitHub</a></p>
     </div>
-</div>
+</section>
 
 <!-- C Projects -->
 <section id="cprojects">
-    <div class="project-card" onclick="openModal('modalC1')">
+    <div class="project-card">
         <h3>Graph Algorithms in C</h3>
-        <p>Click to view the project details.</p>
-    </div>
-</section>
-
-<div id="modalC1" class="modal">
-    <div class="modal-content">
-        <span class="close-btn" onclick="closeModal('modalC1')">&times;</span>
-        <h2>Graph Algorithms in C</h2>
-        <p>This project implements key graph algorithms in C, including:</p>
         <ul>
-            <li>Cycle detection using depth-first search (DFS)</li>
-            <li>Dijkstra's shortest path algorithm with a priority queue</li>
+            <li>Cycle detection using DFS</li>
+            <li>Dijkstra's shortest path algorithm with priority queue</li>
             <li>Graph traversal and path reconstruction</li>
         </ul>
-        <img src="res/graph_theory.png" alt="Graph Theory Screenshot">
-        <p>The code demonstrates modular design using structs and functions, allowing for efficient, maintainable, and reusable implementations of graph algorithms. Input data is structured to represent lakes and rivers as nodes and edges.</p>
+        <img src="res/graph_theory.png" alt="GraphTheory">
         <p><a href="https://github.com/vreategui/AlgoGraphs" target="_blank">View on GitHub</a></p>
     </div>
-</div>
+</section>
 
 <!-- Reports -->
 <section id="report">
-    <div class="project-card" onclick="openModal('modalReport')">
+    <div class="project-card">
         <h3>Accident Severity Report</h3>
-        <p>Click to view the report.</p>
-    </div>
-</section>
-
-<div id="modalReport" class="modal">
-    <div class="modal-content">
-        <span class="close-btn" onclick="closeModal('modalReport')">&times;</span>
-        <h2>Accident Severity Report</h2>
-        <p>This report investigates the impact of road types, road conditions, intersection types, and speed zones on accident severity using datasets from VicRoads.</p>
-        <iframe src="Accident_Severity_Report.pdf" width="100%" height="400px"></iframe>
+        <p>This report investigates the impact of road types, road conditions, intersection types, and speed zones on accident severity using VicRoads datasets.</p>
+        <iframe src="Accident_Severity_Report.pdf" width="100%" height="300px"></iframe>
         <p><a href="Accident_Severity_Report.pdf" target="_blank">Download/View Full PDF</a></p>
     </div>
-</div>
+</section>
 
 <footer>
     &copy; 2025 Vanesa Reategui
 </footer>
 
-<script>
-function openModal(id) {
-    document.getElementById(id).style.display = 'flex';
-}
-function closeModal(id) {
-    document.getElementById(id).style.display = 'none';
-}
-</script>
-
 </body>
 </html>
+
