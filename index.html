@@ -1,157 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vanesa Reategui - Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background: #222;
-            color: #fff;
-            padding: 2rem 1rem;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-        nav {
-            text-align: center;
-            background: #333;
-        }
-        nav a {
-            color: #fff;
-            margin: 0 1rem;
-            text-decoration: none;
-            padding: 1rem;
-            display: inline-block;
-        }
-        nav a:hover {
-            background: #444;
-        }
-        section {
-            padding: 2rem 1rem;
-            max-width: 1000px;
-            margin: auto;
-        }
-        section h2 {
-            border-bottom: 2px solid #222;
-            padding-bottom: 0.5rem;
-        }
-        .project {
-            background: #fff;
-            margin: 1rem 0;
-            padding: 1rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .project img {
-            max-width: 100%;
-            border-radius: 5px;
-        }
-        .project a {
-            color: #0066cc;
-            text-decoration: none;
-        }
-        .project a:hover {
-            text-decoration: underline;
-        }
-        footer {
-            text-align: center;
-            padding: 2rem 1rem;
-            background: #222;
-            color: #fff;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vanesa Reategui - Portfolio</title>
+<style>
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #121212;
+    color: #f0f0f0;
+}
+header {
+    text-align: center;
+    padding: 2rem;
+    background: #1f1f1f;
+}
+header h1 { margin: 0; font-size: 2.5rem; }
+nav {
+    text-align: center;
+    background: #1f1f1f;
+    padding: 0.5rem;
+}
+nav a {
+    color: #1e90ff;
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav a:hover { text-decoration: underline; }
+
+/* Section Cards */
+section { padding: 2rem 1rem; max-width: 1000px; margin: auto; }
+.project-card {
+    background: #1f1f1f;
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.project-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 25px rgba(30,144,255,0.7);
+}
+.project-card h3 { margin-top: 0; }
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    z-index: 1000;
+}
+.modal-content {
+    background: #222;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 800px;
+    width: 100%;
+    color: #f0f0f0;
+    overflow-y: auto;
+    max-height: 90%;
+}
+.close-btn {
+    float: right;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #ff5e5e;
+}
+.modal-content img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+/* Lists inside modal */
+.modal-content ul { padding-left: 1.2rem; }
+.modal-content a { color: #1e90ff; }
+.modal-content a:hover { text-decoration: underline; }
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: #1f1f1f;
+    color: #888;
+}
+</style>
 </head>
 <body>
-    <header>
-        <h1>Vanesa Reategui - Portfolio</h1>
-        <p>Projects, Games, SQL & C Code, and Reports</p>
-    </header>
-    <nav>
-        <a href="#about">About Me</a>
-        <a href="#games">Games</a>
-        <a href="#sql">SQL Projects</a>
-        <a href="#cprojects">C Projects</a>
-        <a href="#report">Report</a>
-    </nav>
 
-    <section id="about">
-    <h2>About Me</h2>
-    <div class="project">
-        <p>Hello! I'm a 3rd year Bachelor of Design student at Melbourne University, majoring in Computing and Software Systems.  
-        I have experience working with Java, C, SQL and Python, and have created a variety of programs and projects ranging from small utilities to more complex programs.  
-        I enjoy analyzing problems, designing solutions, and learning new technologies along the way.  
-        Through my projects, I have developed strong skills in programming logic, software development, and problem-solving, and I am always eager to take on new challenges.</p>
-        </div>
-    </section>
+<header>
+    <h1>Vanesa Reategui - Portfolio</h1>
+    <p>Projects, Games, SQL & C Code, and Reports</p>
+</header>
 
+<nav>
+    <a href="#about">About Me</a>
+    <a href="#games">Games</a>
+    <a href="#sql">SQL Projects</a>
+    <a href="#cprojects">C Projects</a>
+    <a href="#report">Report</a>
+</nav>
 
-    <section id="games">
-        <h2>Games</h2>
-        <p>Built in Java with object-oriented design, leveraging classes, inheritance, and encapsulation for modular and maintainable game development.</p>
-        <div class="project">
-            <h3>Shadow Dungeon - Part 1</h3>
-            <img src="res/Basic.png" alt="Battle Rooms">
-            <p>A 2D Game where player has to touch an enemy to access the next room.</p>
-            <p><a href="https://github.com/vreategui/Shadow-Dungeon---Part-1">View on GitHub</a></p>
-        </div>
-        <div class="project">
-            <h3>Extension of Shadow Dungeon Game</h3>
-            <img src="res/ShadowDungeon.png" alt="Second Game Screenshot">
-            <p>Shadow Dungeon is a fast-paced 2D dungeon crawler built with the Bagel library in Java. Players explore connected rooms, fight projectile-shooting enemies, 
-               collect coins, unlock doors, and progress through increasingly challenging areas. Choose between the Robot (extra coins per kill) or the Marine (river-damage immunity),
-               battle enemies like Bullet Kin, and upgrade weapons or health through the in-game store.Controls: WASD to move, mouse to aim/shoot, Space for the store.</p>
-            <iframe 
-                src="res/UML.drawio.pdf"
-                width="100%"
-                height="500px"
-                style="border: 1px solid #ccc; border-radius: 8px;">
-            </iframe>
-            <p> UML overview of classes, inheritance, and key relationships used in the game’s design.</p>
-            <p><a href="https://github.com/vreategui/Shadow-Dungeon---part-2">View on GitHub</a></p>
-        </div>
-    </section>
-    
-    <section id="database">
-        <h2>Database System Projects</h2>
-        <div class="project">
-        <h3>Social Media Platform - Database Design</h3>
-        <p>Created a physical MySQL database model (Crow’s Foot notation) for a social media platform focused on authentic content and moderation.</p>
-    
-        <!-- Embedded PDF preview -->
-        <iframe 
-            src="social_media_physical_ER.pdf" 
-            width="100%" 
-            height="600px"
-            style="border: 1px solid #ccc; border-radius: 8px;">
-        </iframe>
-    
-        <!-- Download / open in new tab -->
-        <p>
-            <a href="social_media_physical_ER.pdf" target="_blank">
-                Download / View Full PDF
-            </a>
-        </p>
+<!-- About Me -->
+<section id="about">
+    <div class="project-card" onclick="openModal('modalAbout')">
+        <h3>About Me</h3>
+        <p>Click to learn more about my background and skills.</p>
     </div>
+</section>
 
+<div id="modalAbout" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('modalAbout')">&times;</span>
+        <h2>About Me</h2>
+        <p>Hello! I'm a 3rd year Bachelor of Design student at Melbourne University, majoring in Computing and Software Systems. I have experience with Java, C, SQL, and Python, and enjoy analyzing problems, designing solutions, and learning new technologies. Through my projects, I have developed strong skills in programming logic, software development, and problem-solving, and I am always eager to take on new challenges.</p>
+    </div>
+</div>
 
-    <div class="project">
+<!-- Games -->
+<section id="games">
+    <div class="project-card" onclick="openModal('modalGame1')">
+        <h3>Shadow Dungeon - Part 1</h3>
+        <p>Click to view the game project.</p>
+    </div>
+    <div class="project-card" onclick="openModal('modalGame2')">
+        <h3>Shadow Dungeon - Extension</h3>
+        <p>Click to view the extended version with upgrades and enemies.</p>
+    </div>
+</section>
+
+<div id="modalGame1" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('modalGame1')">&times;</span>
+        <h2>Shadow Dungeon - Part 1</h2>
+        <img src="res/Basic.png" alt="Battle Rooms">
+        <p>A 2D game where the player must touch an enemy to access the next room.</p>
+        <p><a href="https://github.com/vreategui/Shadow-Dungeon---Part-1" target="_blank">View on GitHub</a></p>
+    </div>
+</div>
+
+<div id="modalGame2" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('modalGame2')">&times;</span>
+        <h2>Shadow Dungeon - Extension</h2>
+        <img src="res/ShadowDungeon.png" alt="Shadow Dungeon Extension">
+        <p>Fast-paced 2D dungeon crawler built with Bagel library in Java. Explore rooms, fight enemies, collect coins, unlock doors, and upgrade weapons or health through the in-game store.</p>
+        <p><iframe src="res/UML.drawio.pdf" width="100%" height="400px"></iframe></p>
+        <p><a href="https://github.com/vreategui/Shadow-Dungeon---part-2" target="_blank">View on GitHub</a></p>
+    </div>
+</div>
+
+<!-- SQL Projects -->
+<section id="sql">
+    <div class="project-card" onclick="openModal('modalSQL1')">
+        <h3>Social Media Platform - Database Design</h3>
+        <p>Click to view the database model.</p>
+    </div>
+    <div class="project-card" onclick="openModal('modalSQL2')">
         <h3>Movie Database SQL Queries</h3>
+        <p>Click to view the SQL queries project.</p>
+    </div>
+</section>
+
+<div id="modalSQL1" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('modalSQL1')">&times;</span>
+        <h2>Social Media Platform - Database Design</h2>
+        <p>Created a physical MySQL database model (Crow’s Foot notation) for a social media platform focused on authentic content and moderation.</p>
+        <iframe src="social_media_physical_ER.pdf" width="100%" height="400px"></iframe>
+        <p><a href="social_media_physical_ER.pdf" target="_blank">Download/View Full PDF</a></p>
+    </div>
+</div>
+
+<div id="modalSQL2" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('modalSQL2')">&times;</span>
+        <h2>Movie Database SQL Queries</h2>
         <p>Developed SQL queries to analyze movies, ratings, genres, and cross-platform data across IMDB, Netflix, Metacritic, Rotten Tomatoes, and Movielens.</p>
-        <p><a href= https://github.com/vreategui/Database-Systems/blob/main/VanesaReategui_1606065.sql target="_blank">View Queries on GitHub</a></p>
-        </div>
-    </section>
+        <p><a href="https://github.com/vreategui/Database-Systems/blob/main/VanesaReategui_1606065.sql" target="_blank">View on GitHub</a></p>
+    </div>
+</div>
 
+<!-- C Projects -->
+<section id="cprojects">
+    <div class="project-card" onclick="openModal('modalC1')">
+        <h3>Graph Algorithms in C</h3>
+        <p>Click to view the project details.</p>
+    </div>
+</section>
 
+<<<<<<< HEAD
     <section id="cprojects">
         <h2>C Projects</h2>
         <div class="project">
@@ -167,31 +215,53 @@
             <p><a href="https://github.com/vreategui/AlgoGraphs">View on GitHub</a></p>
         </div>
     </section>
+=======
+<div id="modalC1" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('modalC1')">&times;</span>
+        <h2>Graph Algorithms in C</h2>
+        <ul>
+            <li>Cycle detection using DFS</li>
+            <li>Dijkstra's shortest path algorithm with priority queue</li>
+            <li>Graph traversal and path reconstruction</li>
+        </ul>
+        <img src="res/graph_theory.png" alt="GraphTheory">
+        <p>Code demonstrates modular design using structs and functions. Input data represents lakes and rivers as nodes and edges.</p>
+        <p><a href="https://github.com/vreategui/AlgoGraphs" target="_blank">View on GitHub</a></p>
+    </div>
+</div>
+>>>>>>> 3853965 (new design)
 
+<!-- Reports -->
+<section id="report">
+    <div class="project-card" onclick="openModal('modalReport')">
+        <h3>Accident Severity Report</h3>
+        <p>Click to view the report.</p>
+    </div>
+</section>
 
-    <section id="report">
+<div id="modalReport" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal('modalReport')">&times;</span>
         <h2>Accident Severity Report</h2>
-        <div class="project">
-            <h3>Summary</h3>
-            <p>
-                This report investigates the impact of road types, road conditions, intersection types, and speed zones on accident severity. Relevant data was used from the datasets provided by VicRoads. The analysis and models reveal the key impact factors on accident severity.
-            </p>
-    
-            <!-- Embed PDF for quick viewing -->
-            <iframe src="Accident_Severity_Report.pdf" width="100%" height="600px">
-                This browser does not support PDFs. Please download the report to view it: 
-                <a href="Accident_Severity_Report.pdf">Download PDF</a>.
-            </iframe>
-    
-            <p><a href="Accident_Severity_Report.pdf" target="_blank">Download/View Full PDF</a></p>
-        </div>
-    </section>
+        <p>This report investigates the impact of road types, road conditions, intersection types, and speed zones on accident severity using datasets from VicRoads.</p>
+        <iframe src="Accident_Severity_Report.pdf" width="100%" height="400px"></iframe>
+        <p><a href="Accident_Severity_Report.pdf" target="_blank">Download/View Full PDF</a></p>
+    </div>
+</div>
 
+<footer>
+    &copy; 2025 Vanesa Reategui
+</footer>
 
+<script>
+function openModal(id) {
+    document.getElementById(id).style.display = 'flex';
+}
+function closeModal(id) {
+    document.getElementById(id).style.display = 'none';
+}
+</script>
 
-
-    <footer>
-        &copy; 2025 Vanesa Reategui
-    </footer>
 </body>
 </html>
